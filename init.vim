@@ -439,13 +439,17 @@ Plug 'godlygeek/csapprox'
 Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'nanotech/jellybeans.vim'
 Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins'  }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'artur-shaik/vim-javacomplete2'
 
 call plug#end()
 
 :color jellybeans
 
 set omnifunc=syntaxcomplete#Complete
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 let g:deoplete#enable_at_startup = 1
 " deoplete tab-completion
