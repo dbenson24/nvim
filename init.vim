@@ -438,11 +438,18 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'godlygeek/csapprox'
 Plug 'https://github.com/sheerun/vim-polyglot.git'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ervandew/supertab'
-Plug 'Raimondi/delimitMate'
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
 :color jellybeans
+
+set omnifunc=syntaxcomplete#Complete
+
+let g:deoplete#enable_at_startup = 1
+" deoplete tab-completion
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 "
 
